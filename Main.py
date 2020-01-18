@@ -3,6 +3,7 @@ import ChinaMerchantBankCrawler
 import IndustrialAndCommercialBankOfChinaCrawler
 import ChinaConstructionBankCrawler
 import BankOfBeijingCrawler
+import ChinaEverBrightBankCrawler
 from Utils import send_email
 from Config import *
 
@@ -27,7 +28,11 @@ if __name__ == '__main__':
     bank_of_beijing_content = BankOfBeijingCrawler.main()
     print('Done.')
 
-    mail_content = bank_of_china_content + '\n' + china_merchant_bank_content + '\n' + industrial_and_commercial_bank_content + '\n' + china_construction_bank_content + '\n' + bank_of_beijing_content
+    print('正在爬取光大银行的汇率....')
+    china_ever_bright_bank_content = ChinaEverBrightBankCrawler.main()
+    print('Done.')
+
+    mail_content = bank_of_china_content + '\n' + china_merchant_bank_content + '\n' + industrial_and_commercial_bank_content + '\n' + china_construction_bank_content + '\n' + bank_of_beijing_content + '\n' + china_ever_bright_bank_content
     send_email(mail_content=mail_content, mail_subject=mail_subject, sender_email_address=sender_email_address,
                sender_email_password=sender_email_password, receiver_email_addresses=receiver_email_addresses,
                sender_mail_host=sender_mail_host, sender_mail_port=sender_mail_port)
