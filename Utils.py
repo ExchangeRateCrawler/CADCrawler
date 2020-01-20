@@ -40,7 +40,7 @@ def send_email(mail_content, mail_subject, sender_email_address, sender_email_pa
 
     try:
         # 登录并发送邮件
-        smtp_obj = smtplib.SMTP()
+        smtp_obj = smtplib.SMTP_SSL(host=sender_mail_host)
         # 连接服务器 587为Outlook邮箱SMTP服务的端口号
         smtp_obj.connect(sender_mail_host, sender_mail_port)
         # print('111')

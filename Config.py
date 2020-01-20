@@ -11,6 +11,6 @@ receiver_email_addresses = ['emailAddress']
 # 发件SMTP邮箱服务器
 sender_mail_host = 'smtp.163.com'
 # 发件SMTP服务器端口
-sender_mail_port = 25
+sender_mail_port = 465
 
 
